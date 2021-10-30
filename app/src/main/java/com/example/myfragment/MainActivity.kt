@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    var counter = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -13,9 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        var i = 0
+
         button_next_fragment.setOnClickListener {
-            when (i) {
+            when (counter) {
                 0 -> {
                     openFragment(FragmentOne.newInstance(), FragmentOne.TAG)
                     heading_for_fragments.text = getString(R.string.red_fragment)
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity() {
                     button_next_fragment.setTextColor(getColor(R.color.my_red))
                 }
             }
-            i++
-            if (i >= 3) i = 0
+            counter++
+            if (counter >= 3) counter = 0
         }
     }
 
