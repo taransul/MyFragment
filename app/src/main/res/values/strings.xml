@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyFragment</string>
+    <string name="my_fragment1">Fragment 1</string>
+    <string name="my_fragment2">Fragment 2</string>
+    <string name="my_fragment3">Fragment 3</string>
+    <string name="button_next_fragment">next fragment</string>
+    <string name="text_for_fragments">click button \"next fragment\"</string>
+    <string name="hello">hello</string>
+    <string name="red_fragment">red fragment</string>
+    <string name="green_fragment">green fragment</string>
+    <string name="blue_fragment">blue fragment</string>
+</resources>
