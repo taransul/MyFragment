@@ -20,21 +20,15 @@ class MainActivity : AppCompatActivity() {
             when (counter) {
                 0 -> {
                     openFragment(FragmentOne.newInstance(), FragmentOne.TAG)
-                    heading_for_fragments.text = getString(R.string.red_fragment)
-                    heading_for_fragments.setBackgroundResource(R.color.my_red)
-                    button_next_fragment.setTextColor(getColor(R.color.my_green))
+                    fragmentStringColor(R.string.red_fragment, R.color.my_red, R.color.my_green)
                 }
                 1 -> {
                     openFragment(FragmentTwo.newInstance(), FragmentTwo.TAG)
-                    heading_for_fragments.text = getString(R.string.green_fragment)
-                    heading_for_fragments.setBackgroundResource(R.color.my_green)
-                    button_next_fragment.setTextColor(getColor(R.color.my_blue))
+                    fragmentStringColor(R.string.green_fragment, R.color.my_green, R.color.my_blue)
                 }
                 2 -> {
                     openFragment(FragmentThree.newInstance(), FragmentThree.TAG)
-                    heading_for_fragments.text = getString(R.string.blue_fragment)
-                    heading_for_fragments.setBackgroundResource(R.color.my_blue)
-                    button_next_fragment.setTextColor(getColor(R.color.my_red))
+                    fragmentStringColor(R.string.blue_fragment, R.color.my_blue, R.color.my_red)
                 }
             }
             counter++
@@ -48,5 +42,15 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(tag)
             .add(R.id.place_holder_for_fragment, fragment)
             .commit()
+    }
+
+    private fun fragmentStringColor(
+        headingTextGetString: Int,
+        headingSetBackgroundResource: Int,
+        buttonSetTextColor: Int
+    ) {
+        heading_for_fragments.text = getString(headingTextGetString)
+        heading_for_fragments.setBackgroundResource(headingSetBackgroundResource)
+        button_next_fragment.setTextColor(getColor(buttonSetTextColor))
     }
 }
